@@ -1,0 +1,19 @@
+{
+  "name": "Node_Chat_App",
+  "author": "Kartikey",
+  "version": "0.0.1",
+  "description": "A simple Chat App.",
+  "main": "server.js",
+  "dependencies": {
+    "bower": "^1.6.5",
+    "browserify": "^12.0.1",
+    "express": "^4.13.1",
+    "lodash": "^3.10.0",
+    "mongoose": "^4.2.3",
+    "socket.io": "^1.3.6",
+    "socket.io-stream": "^0.9.0"
+  },
+  "engines": {
+    "node": "*"
+  }
+}

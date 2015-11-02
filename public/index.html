@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="musicApp">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Beat Streamz</title>
+		
+		<script src="assets/js/angular.js"></script>
+        <script src="assets/js/bundle.js"></script>
+        <script src="assets/js/id3-master/id3.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular-route.js"></script>
+		<script src="assets/js/ui-bootstrap-tpls-0.13.0.js"></script>
+        <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+        <script src="assets/js/lodash.js"></script>
+		<script src="app.js"></script>
+
+		<link rel="stylesheet" href="assets/css/bootstrap.css">
+		<link rel="stylesheet" href="assets/css/bootstrap-theme.css">
+		<link rel="stylesheet" href="assets/css/main.css">
+	</head>
+	<body ng-controller="chatController">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center titleClass">
+                    <h1>Beat Streamzzz</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-info" id="dropbox">
+                        <div class="panel-heading">Shared Song List</div>
+                        <div class="panel-body" ng-model="dnd">
+                            <ul class="list-group">
+                                <li class ="list-group-item" ng-repeat="song in songList">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h4 class="media-heading">{{ song.title + " - " + song.artist }}</h4>
+                                        </div>
+                                    </div>
+                                </li>                           
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <form  ng-submit="send()">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Type your query ..." ng-model="query">
+                                    <span class="input-group-btn"><button class="btn btn-info" type="submit">SEARCH</button></span>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-body">
+                            <ul class="list-group">
+                                <li class ="list-group-item" ng-repeat="res in results" ng-click="playSong()" socketid={{res.socketid}} musicid={{res.musicid}} songdir>
+                                    <span>{{res.title + " --- " + res.artist}}</span>
+                                </li>                
+                            </ul>
+                        </div>
+                        <div class="panel-footer">
+                            <audio controls>
+                                <source  id="atag" src="{{ src1 }}" type="audio/mp3">
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+	</body>
+</html>
