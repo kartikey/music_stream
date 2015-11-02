@@ -1,3 +1,3 @@
-# Simple Node-Angular Chat App
+# Beat Streamzzz
 
-A simple node and angular js CHAT application :).
+A web application that allows users to stream music files between each other.

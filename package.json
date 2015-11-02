@@ -1,8 +1,8 @@
 {
-  "name": "Node_Chat_App",
+  "name": "music_streaming_app",
   "author": "Kartikey",
   "version": "0.0.1",
-  "description": "A simple Chat App.",
+  "description": "A web application that allows users to stream music files between each other.",
   "main": "server.js",
   "dependencies": {
     "bower": "^1.6.5",
